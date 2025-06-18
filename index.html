@@ -1,42 +1,239 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
+    <title>Jiaxin Hu - Personal Homepage</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
         .container {
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 50px;
         }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        
         h1 {
-            color: #333;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
         }
-        p {
+        
+        .title {
+            color: #6c757d;
             font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item strong {
+            width: 100px;
+            color: #495057;
+        }
+        
+        .contact-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        
+        .bio {
+            text-align: justify;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .research-interests {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .research-interests ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .research-interests li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .research-interests li:before {
+            content: "▸";
+            color: #2196f3;
+            position: absolute;
+            left: 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-item strong {
+                width: auto;
+                margin-bottom: 5px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>欢迎来到我的网站！</h1>
-        <p>这是一个使用 GitHub Pages 搭建的简单个人网站。</p>
-        <p>您可以在这里展示您的项目、博客或任何您想分享的内容。</p>
-        <p>编辑 `index.html` 文件来修改这里的文字吧！</p>
+        <div class="header">
+            <div class="profile-img">JH</div>
+            <h1>Jiaxin Hu</h1>
+            <div class="title">Researcher & Academic</div>
+        </div>
+        
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <div class="contact-item">
+                <strong>Email:</strong>
+                <a href="mailto:hujiaxin@example.com">hujiaxin@example.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>GitHub:</strong>
+                <a href="https://github.com/hujiaxin" target="_blank">github.com/hujiaxin</a>
+            </div>
+            <div class="contact-item">
+                <strong>ORCID:</strong>
+                <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">0000-0000-0000-0000</a>
+            </div>
+            <div class="contact-item">
+                <strong>Location:</strong>
+                <span>City, Country</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>About Me</h2>
+            <div class="bio">
+                <p>Welcome to my personal homepage. I am a researcher with interests in various fields of study. This page serves as a central hub for my academic work and professional information, particularly for submissions to academic venues such as OpenReview.</p>
+                
+                <p>I am committed to advancing knowledge through rigorous research and collaboration with the academic community. My work focuses on innovative approaches to solving complex problems in my field of expertise.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Research Interests</h2>
+            <div class="research-interests">
+                <ul>
+                    <li>Machine Learning and Artificial Intelligence</li>
+                    <li>Data Science and Analytics</li>
+                    <li>Computer Vision and Natural Language Processing</li>
+                    <li>Deep Learning and Neural Networks</li>
+                    <li>Computational Methods and Algorithms</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Academic Profile</h2>
+            <div class="bio">
+                <p>This homepage is maintained for academic purposes and serves as a reference point for peer review processes, conference submissions, and collaborative research opportunities. For the most up-to-date information about my research and publications, please refer to my academic profiles and repositories.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 Jiaxin Hu. All rights reserved.</p>
+            <p>Last updated: <span id="lastUpdated"></span></p>
+        </div>
     </div>
+    
+    <script>
+        // Set last updated date
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
+    </script>
 </body>
 </html>
