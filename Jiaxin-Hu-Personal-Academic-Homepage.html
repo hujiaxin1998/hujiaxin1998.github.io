@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiaxin Hu - Personal Academic Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 30px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .title {
+            color: #6c757d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .contact-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item strong {
+            width: 80px;
+            color: #495057;
+        }
+        
+        .contact-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .bio {
+            text-align: justify;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        .research-interests {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .interest-tag {
+            background: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: #007bff;
+            font-weight: 600;
+            font-size: 0.95em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        /* List Items Styling */
+        .edu-item, .exp-item {
+            margin-bottom: 20px;
+        }
+        .edu-header, .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .edu-title, .exp-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        .edu-date, .exp-date {
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+        .edu-desc, .exp-desc {
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Publication Styling */
+        .pub-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .pub-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .pub-list li:before {
+            content: "[ \2022 ]";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .author-me {
+            font-weight: bold;
+            color: #000;
+        }
+        .venue {
+            font-style: italic;
+            color: #2c3e50;
+        }
+        .badge {
+            background-color: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 5px;
+            font-weight: normal;
+        }
+        .badge-review { background-color: #ffc107; color: #333; }
+        .badge-patent { background-color: #17a2b8; }
+
+        /* Skills Styling */
+        .skills-container ul {
+            padding-left: 20px;
+            color: #444;
+            line-height: 1.8;
+        }
+        .skills-container li::marker {
+            color: #007bff;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            .edu-header, .exp-header {
+                flex-direction: column;
+            }
+            .edu-date, .exp-date {
+                margin-top: 5px;
+            }
+            .contact-col {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile-img">JH</div>
+            <h1>Jiaxin Hu (胡佳鑫)</h1>
+            <div class="title">Ph.D. Candidate | Sun Yat-sen University</div>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <div class="contact-col">
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <a href="mailto:hujx57@mail2.sysu.edu.cn">hujx57@mail2.sysu.edu.cn</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong>
+                    <span>+86 188 0108 9873</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Major:</strong>
+                    <span>Control Science and Engineering</span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <div class="contact-item">
+                    <strong>GitHub:</strong>
+                    <a href="https://hujiaxin1998.github.io/" target="_blank">hujiaxin1998.github.io</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong>
+                    <span>Haizhu District, Guangzhou, China</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Born:</strong>
+                    <span>July 1998 (Luohe, Henan)</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About Me Section -->
+        <div class="section">
+            <h2>About Me</h2>
+            <div class="bio">
+                <p>I am currently a Ph.D. Candidate in the School of Intelligent Systems Engineering at Sun Yat-sen University. My research deeply focuses on the integration of Large Language Models (LLMs) and Cognitive Architectures. I have a profound understanding of the cognitive and reasoning mechanisms, as well as the limitations of current AI systems.</p>
+                <br>
+                <p>My work primarily addresses the shortcomings of existing AI frameworks in cognitive reasoning, explainability, and complex dynamic scene understanding. Through extensive development experience, I have built multiple Agent frameworks and applied Reinforcement Learning (RL) techniques, resulting in several SCI and CCF papers centered on LLMs and cognitive reasoning.</p>
+            </div>
+        </div>
+        
+        <!-- Research Interests Section -->
+        <div class="section">
+            <h2>Research Interests</h2>
+            <div class="research-interests">
+                <div class="interest-tag">LLM Agent</div>
+                <div class="interest-tag">Cognitive Recommendation</div>
+                <div class="interest-tag">Explainable AI (XAI)</div>
+                <div class="interest-tag">Cognitive Reasoning</div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <h2>Education</h2>
+            
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span class="edu-title">Sun Yat-sen University (中山大学)</span>
+                    <span class="edu-date">Sep 2023 - Present</span>
+                </div>
+                <div class="edu-desc">Ph.D. in Control Science and Engineering | School of Intelligent Systems Engineering</div>
+                <div class="edu-desc" style="font-size: 0.9em; color: #6c757d;">Rank: 5/29</div>
+            </div>
+            
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span class="edu-title">Beijing Jiaotong University (北京交通大学)</span>
+                    <span class="edu-date">Sep 2020 - Jul 2022</span>
+                </div>
+                <div class="edu-desc">Master of Engineering | School of Mechanical, Electronic and Control Engineering</div>
+                <div class="edu-desc" style="font-size: 0.9em; color: #6c757d;">Rank: 3/12</div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span class="edu-title">Henan Polytechnic University (河南理工大学)</span>
+                    <span class="edu-date">Sep 2016 - Jul 2020</span>
+                </div>
+                <div class="edu-desc">Bachelor of Engineering | School of Energy Science and Engineering</div>
+                <div class="edu-desc" style="font-size: 0.9em; color: #6c757d;">Rank: 3/56</div>
+            </div>
+        </div>
+
+        <!-- Publications Section -->
+        <div class="section">
+            <h2>Publications & Patents</h2>
+            
+            <h3 style="margin: 15px 0 10px; font-size: 1.1em; color: #495057;">Accepted Papers</h3>
+            <ul class="pub-list">
+                <li>
+                    <span class="author-me">Jiaxin Hu</span>, Tao Wang*, Fei Wang, Hongrun Wang, Jingshuai Cao. "Causal-Guided Disentanglement for Debiasing Recommendation via Counterfactual Reasoning." <span class="venue">Knowledge-Based Systems</span>. <span class="badge">CAS Q1, IF=8.0</span>
+                </li>
+                <li>
+                    Fei Wang, Jiayue Sun, <span class="author-me">Jiaxin Hu</span>, et al. "A Dual-Layer Evaluation Framework for USV Maritime Patrol Based on Time-Varying Markov Chains: Unpredictability Index Design and Adversarial Verification." <span class="badge">CAS Q2, IF=6.3</span>
+                </li>
+                <li>
+                    <span class="author-me">Hu J</span>, Wang T*, Wang H, et al. "CogMUS: A Soar-Based Cognitive Framework for Mission Understanding in Multi-UAV Cooperative Operation." <span class="venue">Drones</span>, 2025, 9(12): 813. <span class="badge">JCR Q1, IF=4.8</span>
+                </li>
+                <li>
+                    <span class="author-me">Jiaxin Hu</span>, Tao Wang*, Hongrun Wang, Anqi Wu, Xinshuang Xu. "G2P-Rec: Graph-to-Prompt Synergistic Reasoning for Knowledge-Enhanced Recommendation." <span class="venue">ICASSP 2026</span>. <span class="badge">CCF-B</span>
+                </li>
+            </ul>
+
+            <h3 style="margin: 20px 0 10px; font-size: 1.1em; color: #495057;">Under Review / Preprints</h3>
+            <ul class="pub-list">
+                <li>
+                    <span class="author-me">Jiaxin Hu</span>, Tao Wang*, Yuedong Chen, Hongrun Wang. "Process as Explanation: A Cognitive Recommendation Framework Integrating Symbolic Reasoning and Multi-Agent Reinforcement Learning." <span class="venue">ACM TOIS</span>. <span class="badge badge-review">Awaiting Decision</span>
+                </li>
+                <li>
+                    <span class="author-me">Jiaxin Hu</span>, Tao Wang*, Hongrun Wang, Jingshuai Cao. "Beyond the Clickbait: Learning Intrinsic Content Representations for Fair Multimedia Recommendation." <span class="venue">ACM MM 2026</span>. <span class="badge badge-review">Rebuttal</span>
+                </li>
+                <li>
+                    <span class="author-me">Hu J</span>, Wang T*, Yang B, et al. "CogRec: An Impasse-Driven Neuro-Symbolic Cognitive Agent for Adaptive and Explainable Recommendation." <span class="venue">arXiv preprint arXiv:2512.24113 (Under review in Information Sciences)</span>. 
+                </li>
+            </ul>
+
+            <h3 style="margin: 20px 0 10px; font-size: 1.1em; color: #495057;">Patents</h3>
+            <ul class="pub-list">
+                <li>
+                    Tao Wang, <span class="author-me">Jiaxin Hu</span>, Yuedong Chen, et al. "An Intelligent Recommendation Decision Method and System based on Graph Neural Networks and Cognitive Architecture." <span class="badge badge-patent">Granted: 2026.02.06</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Research Projects Section -->
+        <div class="section">
+            <h2>Research Projects</h2>
+            
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Research on *** Customized Push Technology for Task Understanding</span>
+                    <span class="exp-date">Sep 2023 - Present</span>
+                </div>
+                <div class="exp-desc" style="font-weight: 500; margin-bottom: 5px;">National Longitudinal Project | Core Participant</div>
+                <div class="exp-desc bio">
+                    Targeting the severe hallucination and fragile reasoning issues of LLM Agents in complex, dynamic multi-domain environments. Conducted research on Agents based on cognitive architectures. Designed a cognitive reasoning Agent model integrating rule-driven systems and LLM generation. Built a prototype system for situation awareness and auxiliary decision-making, which equipped the Agent with multi-task understanding and environmental adaptability, significantly improving the accuracy and logical explainability of machine-assisted decision-making.
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Effective Dataset Research for Training Aerial *** Intelligent Recognition Algorithms</span>
+                    <span class="exp-date">Jun 2025 - Present</span>
+                </div>
+                <div class="exp-desc" style="font-weight: 500; margin-bottom: 5px;">National Natural Science Foundation of China (Youth Program) | Core Participant</div>
+                <div class="exp-desc bio">
+                    Addressed the reliability bottlenecks of intelligent recognition algorithms in complex adversarial scenarios. Extracted key elements affecting target recognition and tracking based on target perception principles. Carried out the design of an "attribute-complete" dataset sample space and proposed an Agent for constructing effective datasets under non-instantiated conditions.
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-container bio">
+                <ul>
+                    <li><strong>AI & Theories:</strong> Proficient in the underlying mechanisms of Large Language Models (LLMs) and Agent architectures. Deep understanding and practical experience in Reinforcement Learning (RL) and Retrieval-Augmented Generation (RAG).</li>
+                    <li><strong>Machine Learning Frameworks:</strong> Highly proficient in Python programming, PyTorch, TensorFlow, and mainstream LLM development tools (e.g., fine-tuning techniques).</li>
+                    <li><strong>Software Engineering:</strong> Solid grasp of system development technologies including C#, HTML, CSS, and JavaScript. Possess practical experience in enterprise system development.</li>
+                    <li><strong>Developer Tools:</strong> VS Code, PyCharm, Git / Gitee.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>&copy; <span id="currentYear"></span> Jiaxin Hu. All rights reserved.</p>
+            <p>Last updated: <span id="lastUpdated"></span></p>
+        </div>
+    </div>
+    
+    <script>
+        // Set current year and last updated date dynamically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+</body>
+</html>
